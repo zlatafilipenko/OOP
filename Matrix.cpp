@@ -69,6 +69,23 @@ Matrix* Matrix::In_Matrix(ifstream& ifst) {
     {
         M = new Triangular_matrix; //Создаем треугольную матрицу
 
+        int Key_out = 0;
+
+        ifst >> Key_out;
+
+        if (Key_out == 1)
+        {
+            M->K_o = BY_LINE;
+        }
+        else if (Key_out == 2)
+        {
+            M->K_o = BY_COLUMN;
+        }
+        else if (Key_out == 3)
+        {
+            M->K_o = ONE_DIMENSIONAL;
+        }
+
         ifst >> M->N; //Cчитываем размерность массива
     }
     else
@@ -86,7 +103,6 @@ bool Matrix::Compare(Matrix& Other)
     return Sum(N) > Other.Sum(Other.N);
 }
 
-void Matrix::Out_Only_Two_Dim(int N, ofstream& ofst) {
+void Matrix::Out_Only_Two_Dim(Key_out K_o, int N, ofstream& ofst) {
     ofst << endl;
-
 }

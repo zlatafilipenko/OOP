@@ -35,7 +35,7 @@ int main(/*int argc, char* argv[]*/)
 
     ofst << "Empty container. " << endl;
 
-    C.Out_Container(ofst); //Вывод контейнера
+    // C.Out_Container(ofst); //Вывод контейнера
 
     cout << "Stop" << endl;
     system("pause");

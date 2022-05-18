@@ -68,6 +68,7 @@ int Two_dimensional_array::Sum(int N) {
             Sum += Array[i][j];
         }
     }
+
     return Sum;
 }
 
