@@ -1,8 +1,6 @@
 #ifndef TWO_DIMENSIONAL_ARRAY_H
 #define TWO_DIMENSIONAL_ARRAY_H
 
-#include <fstream>
-
 #include "Matrix.h"
 
 using namespace std;
