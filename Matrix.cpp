@@ -31,6 +31,6 @@ Matrix* Matrix::In_Matrix(ifstream& ifst) {
     }
 
     M->In_Array(M->N, ifst); //—читываем элементы матрицы
-    
+
     return M;
 }
