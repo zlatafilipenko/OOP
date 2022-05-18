@@ -85,3 +85,8 @@ bool Matrix::Compare(Matrix& Other)
 {
     return Sum(N) > Other.Sum(Other.N);
 }
+
+void Matrix::Out_Only_Two_Dim(int N, ofstream& ofst) {
+    ofst << endl;
+
+}

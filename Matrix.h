@@ -25,6 +25,7 @@ public:
 	virtual int Sum(int N) = 0;
 	Key_out Get_K_o(); //Функция получения способа вывода матрицы
 	bool Compare(Matrix& Other);
+	virtual void Out_Only_Two_Dim(int N, ofstream& ofst); //Функция вывода только обычного двумерного массива
 
 protected:
 	Matrix() {};
