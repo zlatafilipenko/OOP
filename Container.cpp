@@ -2,9 +2,9 @@
 
 Container::Container() : Len(0) {};
 
-void Container::In_Container(ifstream& ifst) 
+void Container::In_Container(ifstream& ifst)
 {
-    while (!ifst.eof()) 
+    while (!ifst.eof())
     {
         if ((Cont[Len] = Matrix::In_Matrix(ifst)) != 0) //—читываем очередную матрицу
         {
@@ -30,19 +30,19 @@ void Container::Out_Container(ofstream& ofst) {
     }
 
     //¬ыводим номера матриц и сами эти матрицы
-    for (int i = 0; i < Len; i++) 
+    for (int i = 0; i < Len; i++)
     {
         ofst << i << ": ";
-        Cont[i]->Out_Array(Cont[i]->Get_N(), ofst);
+        Cont[i]->Out_Array(Cont[i]->Get_K_o(), Cont[i]->Get_N(), ofst);
     }
 }
 
-void Container::Clear_Container() 
+void Container::Clear_Container()
 {
-    for (int i = 0; i < Len; i++) 
+    for (int i = 0; i < Len; i++)
     {
         delete Cont[i]; //ќчищаем пам€ть, вылеленную дл€ каждой матрицы
     }
-    
+
     Len = 0;
 }
