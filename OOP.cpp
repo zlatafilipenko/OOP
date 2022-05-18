@@ -1,9 +1,8 @@
 ﻿#include <iostream>
 #include "Container.h"
 
-int main(int argc, char* argv[])
-{
-    
+int main(/*int argc, char* argv[]*/)
+{/*
     if (argc != 3) {
         cout << "incorrect command line! "
             "Waited: command in_file out_file"
@@ -13,12 +12,11 @@ int main(int argc, char* argv[])
     
     ifstream ifst(argv[1]);
     ofstream ofst(argv[2]);
-    
-    /*
+ */ 
+
     ifstream ifst("D:\\Univer\\Программирование\\Lab1\\OOP\\input.txt");
     ofstream ofst("D:\\Univer\\Программирование\\Lab1\\OOP\\output.txt");
-    */
-
+   
     cout << "Start" << endl;
 
     Container C; //Объявляем новый контейнер
