@@ -3,6 +3,7 @@
 
 #include "Matrix.h"
 
+//Класс "контейнера"
 class Container {
     enum {
         Max_len = 100

@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Класс "треугольная марица"
 class Triangular_matrix : public Matrix {
     int* Array; //Массив
 public:

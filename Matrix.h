@@ -12,6 +12,7 @@ enum Key_out {
 	ONE_DIMENSIONAL //В виде одномерного массива
 };
 
+//Класс "матрица"
 class Matrix {
 	int N;
 	Key_out K_o;

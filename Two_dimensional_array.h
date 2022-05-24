@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//Класс "двумерный массив"
 class Two_dimensional_array : public Matrix {
 	int** Array; //Массив
 public:

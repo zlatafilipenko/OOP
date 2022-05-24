@@ -1,108 +1,96 @@
 #include "Triangular_matrix.h"
 
-void Triangular_matrix::In_Array(int N, ifstream& ifst)
-{
+void Triangular_matrix::In_Array(int N, ifstream& ifst) {
     int Temp_N = N;
     int Array_size = 0;
 
-    while (Temp_N != 0)
-    {
+    //Корректировка размера массива
+    while (Temp_N != 0) {
         Array_size += Temp_N;
         Temp_N--;
     }
 
     Array = new int[Array_size];
-
     bool Error = false;
 
-    for (int i = 0; i < Array_size; i++)
-    {
+    for (int i = 0; i < Array_size; i++) {
         string Temp_str = "";
+
         ifst >> Temp_str;
 
-        if (Temp_str == "")
-        {
+        //Проверка на считывание пустого значения
+        if (Temp_str == "") {
             Array = NULL;
 
             return;
         }
 
-        if (isdigit(int(signed char(Temp_str.front()))))
-        {
+        //Проверка на то, что считанная строка - число
+        if (isdigit(int(signed char(Temp_str.front())))) {
             Array[i] = atoi(Temp_str.c_str());
         }
-        else
-        {
+        else {
             Error = true;
         }
     }
 
-    if (Error)
-    {
+    if (Error) {
         Array = NULL;
     }
 }
 
-void Triangular_matrix::Out_Array(Key_out K_o, int N, ofstream& ofst)
-{
+void Triangular_matrix::Out_Array(Key_out K_o, int N, ofstream& ofst) {
     ofst << "It's triangular matrix with dimension = " << N << endl;
 
     int Array_index = 0;
-
     int** Temp_array = new int* [N];
 
-    for (int i = 0; i < N; i++)
-    {
+    //Преобразование одномерного массива в двумерный - треугольную матрицу
+    for (int i = 0; i < N; i++) {
         Temp_array[i] = new int[N];
     }
 
-    for (int i = 0; i < N; i++)
-    {
-        for (int j = 0; j < N; j++)
-        {
-            if (i >= j)
-            {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            if (i >= j) {
                 Temp_array[i][j] = Array[Array_index];
                 Array_index++;
             }
-            else
-            {
+            else {
                 Temp_array[i][j] = 0;
             }
         }
     }
 
-    if (K_o == BY_LINE)
-    {
-        for (int i = 0; i < N; i++)
-        {
-            for (int j = 0; j < N; j++)
-            {
+    if (K_o == BY_LINE) { //Вывод по строкам
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
                 ofst << Temp_array[i][j] << " ";
             }
+
             ofst << endl;
         }
+
+        ofst << endl;
     }
-    else if (K_o == BY_COLUMN)
-    {
-        for (int i = 0; i < N; i++)
-        {
-            for (int j = 0; j < N; j++)
-            {
+    else if (K_o == BY_COLUMN) { //Вывод по столбцам
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
                 ofst << Temp_array[j][i] << " ";
             }
+
             ofst << endl;
         }
+
+        ofst << endl;
     }
-    else if (K_o == ONE_DIMENSIONAL)
-    {
-        for (int i = 0; i < N; i++)
-        {
-            for (int j = 0; j < N; j++)
-            {
+    else if (K_o == ONE_DIMENSIONAL) { //Вывод в виде одномерного массива
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
                 ofst << Temp_array[i][j] << " ";
             }
         }
+
         ofst << endl;
     }
 }
@@ -125,7 +113,6 @@ int Triangular_matrix::Sum(int N) {
     return Sum;
 }
 
-int* Triangular_matrix::Get_Array()
-{
+int* Triangular_matrix::Get_Array() {
     return Array;
 }

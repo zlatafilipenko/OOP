@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//Класс "диагональная матрица"
 class Diagonal_matrix : public Matrix {
 	int* Array; //Массива
 public:
