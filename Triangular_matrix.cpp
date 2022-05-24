@@ -116,3 +116,19 @@ int Triangular_matrix::Sum(int N) {
 int* Triangular_matrix::Get_Array() {
     return Array;
 }
+
+void Triangular_matrix::Multi_Method(Matrix* Other, ofstream& ofst) {
+    Other->TriangulaMM(ofst);
+}
+
+void Triangular_matrix::TriangulaMM(ofstream& ofst) {
+    ofst << "Triangular Matrix and Triangular Matrix." << endl;
+}
+
+void Triangular_matrix::Two_DimMM(ofstream& ofst) {
+    ofst << "Triangular Matrix and Two Dimensional Array." << endl;
+}
+
+void Triangular_matrix::DiagonalMM(ofstream& ofst) {
+    ofst << "Triangular Matrix and Diagonal matrix." << endl;
+}

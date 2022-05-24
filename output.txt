@@ -52,4 +52,141 @@ Only Two Dimensional arrays.
 21 28 
 
 5: 
+Multimethod.
+
+Diagonal Matrix and Two Dimensional Array.
+It's diagonal matrix with dimension = 4
+9 0 0 0 
+0 7 0 0 
+0 0 2 0 
+0 0 0 1 
+
+It's two dimensional matrix with dimension = 3
+1 4 7 
+2 0 5 
+3 6 9 
+
+Triangular Matrix and Diagonal matrix.
+It's diagonal matrix with dimension = 4
+9 0 0 0 
+0 7 0 0 
+0 0 2 0 
+0 0 0 1 
+
+It's triangular matrix with dimension = 4
+1 0 0 0 2 3 0 0 4 5 6 0 7 8 9 0 
+Triangular Matrix and Diagonal matrix.
+It's diagonal matrix with dimension = 4
+9 0 0 0 
+0 7 0 0 
+0 0 2 0 
+0 0 0 1 
+
+It's triangular matrix with dimension = 3
+3 0 0 6 9 0 12 15 18 
+Diagonal Matrix and Two Dimensional Array.
+It's diagonal matrix with dimension = 4
+9 0 0 0 
+0 7 0 0 
+0 0 2 0 
+0 0 0 1 
+
+It's two dimensional matrix with dimension = 2
+7 14 
+21 28 
+
+Diagonal Matrix and Diagonal Matrix.
+It's diagonal matrix with dimension = 4
+9 0 0 0 
+0 7 0 0 
+0 0 2 0 
+0 0 0 1 
+
+It's diagonal matrix with dimension = 3
+14 0 0 
+0 28 0 
+0 0 42 
+
+Triangular Matrix and Two Dimensional Array.
+It's two dimensional matrix with dimension = 3
+1 4 7 
+2 0 5 
+3 6 9 
+
+It's triangular matrix with dimension = 4
+1 0 0 0 2 3 0 0 4 5 6 0 7 8 9 0 
+Triangular Matrix and Two Dimensional Array.
+It's two dimensional matrix with dimension = 3
+1 4 7 
+2 0 5 
+3 6 9 
+
+It's triangular matrix with dimension = 3
+3 0 0 6 9 0 12 15 18 
+Two Dimensional Array and Two Dimensional Array.
+It's two dimensional matrix with dimension = 3
+1 4 7 
+2 0 5 
+3 6 9 
+
+It's two dimensional matrix with dimension = 2
+7 14 
+21 28 
+
+Two Dimensional Array and Diagonal Matrix.
+It's two dimensional matrix with dimension = 3
+1 4 7 
+2 0 5 
+3 6 9 
+
+It's diagonal matrix with dimension = 3
+14 0 0 
+0 28 0 
+0 0 42 
+
+Triangular Matrix and Triangular Matrix.
+It's triangular matrix with dimension = 4
+1 0 0 0 2 3 0 0 4 5 6 0 7 8 9 0 
+It's triangular matrix with dimension = 3
+3 0 0 6 9 0 12 15 18 
+Triangular Matrix and Two Dimensional Array.
+It's triangular matrix with dimension = 4
+1 0 0 0 2 3 0 0 4 5 6 0 7 8 9 0 
+It's two dimensional matrix with dimension = 2
+7 14 
+21 28 
+
+Triangular Matrix and Diagonal Matrix.
+It's triangular matrix with dimension = 4
+1 0 0 0 2 3 0 0 4 5 6 0 7 8 9 0 
+It's diagonal matrix with dimension = 3
+14 0 0 
+0 28 0 
+0 0 42 
+
+Triangular Matrix and Two Dimensional Array.
+It's triangular matrix with dimension = 3
+3 0 0 6 9 0 12 15 18 
+It's two dimensional matrix with dimension = 2
+7 14 
+21 28 
+
+Triangular Matrix and Diagonal Matrix.
+It's triangular matrix with dimension = 3
+3 0 0 6 9 0 12 15 18 
+It's diagonal matrix with dimension = 3
+14 0 0 
+0 28 0 
+0 0 42 
+
+Two Dimensional Array and Diagonal Matrix.
+It's two dimensional matrix with dimension = 2
+7 14 
+21 28 
+
+It's diagonal matrix with dimension = 3
+14 0 0 
+0 28 0 
+0 0 42 
+
 Empty container. 

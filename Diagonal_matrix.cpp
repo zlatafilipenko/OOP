@@ -112,3 +112,19 @@ int Diagonal_matrix::Sum(int N) {
 int* Diagonal_matrix::Get_Array() {
     return Array;
 }
+
+void Diagonal_matrix::Multi_Method(Matrix* Other, ofstream& ofst) {
+    Other->DiagonalMM(ofst);
+}
+
+void Diagonal_matrix::DiagonalMM(ofstream& ofst) {
+    ofst << "Diagonal Matrix and Diagonal Matrix." << endl;
+}
+
+void Diagonal_matrix::Two_DimMM(ofstream& ofst) {
+    ofst << "Two Dimensional Array and Diagonal Matrix." << endl;
+}
+
+void Diagonal_matrix::TriangulaMM(ofstream& ofst) {
+    ofst << "Triangular Matrix and Diagonal Matrix." << endl;
+}

@@ -69,3 +69,17 @@ void Container::Out_Only_Two_Dim(ofstream& ofst) {
         Cont[i]->Out_Only_Two_Dim(Cont[i]->Get_K_o(), Cont[i]->Get_N(), ofst);
     }
 }
+
+void Container::Multi_Method_Container(ofstream& ofst) {
+    ofst << "Multimethod." << endl << endl;
+
+    for (int i = 0; i < Len - 1; i++)
+    {
+        for (int j = i + 1; j < Len; j++)
+        {
+            Cont[i]->Multi_Method(Cont[j], ofst);
+            Cont[i]->Out_Array(Cont[i]->Get_K_o(), Cont[i]->Get_N(), ofst);
+            Cont[j]->Out_Array(Cont[j]->Get_K_o(), Cont[j]->Get_N(), ofst);
+        }
+    }
+}

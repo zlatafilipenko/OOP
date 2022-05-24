@@ -94,3 +94,19 @@ void Two_dimensional_array::Out_Only_Two_Dim(Key_out K_o, int N, ofstream& ofst)
 int** Two_dimensional_array::Get_Array() {
     return Array;
 }
+
+void Two_dimensional_array::Multi_Method(Matrix* Other, ofstream& ofst) {
+    Other->Two_DimMM(ofst);
+}
+
+void Two_dimensional_array::Two_DimMM(ofstream& ofst) {
+    ofst << "Two Dimensional Array and Two Dimensional Array." << endl;
+}
+
+void Two_dimensional_array::DiagonalMM(ofstream& ofst) {
+    ofst << "Diagonal Matrix and Two Dimensional Array." << endl;
+}
+
+void Two_dimensional_array::TriangulaMM(ofstream& ofst) {
+    ofst << "Triangular Matrix and Two Dimensional Array." << endl;
+}
