@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include "Container.h"
 
-int main(/*int argc, char* argv[]*/)
+int main(/*int argc, char* argv[] */ )
 {/*
     if (argc != 3) {
         cout << "incorrect command line! "
@@ -9,14 +9,29 @@ int main(/*int argc, char* argv[]*/)
             << endl;
         exit(1);
     }
-    
+   
     ifstream ifst(argv[1]);
+
+    if (!ifst.is_open())
+    {
+        cout << "No input file found or could not open!" << endl;
+        system("pause");
+        return 1;
+    }
+
     ofstream ofst(argv[2]);
+
+    if (!ofst.is_open())
+    {
+        cout << "No output file found or could not open!" << endl;
+        system("pause");
+        return 1;
+    }
  */ 
 
     ifstream ifst("D:\\Univer\\Программирование\\Lab1\\OOP\\input.txt");
     ofstream ofst("D:\\Univer\\Программирование\\Lab1\\OOP\\output.txt");
-   
+    
     cout << "Start" << endl;
 
     Container C; //Объявляем новый контейнер

@@ -15,17 +15,48 @@ Key_out Matrix::Get_K_o()
 
 Matrix* Matrix::In_Matrix(ifstream& ifst) {
     Matrix* M; //Создаем указатель на матрицу
-    int K;
 
-    ifst >> K; //Считываем идентификатор матрицы
+    string Temp_str = "";
+    ifst >> Temp_str;
+
+    if (Temp_str != "1" && Temp_str != "2" && Temp_str != "3" && Temp_str != "")
+    {
+        ifst >> Temp_str;
+        ifst >> Temp_str;
+        ifst >> Temp_str;
+
+        while (ifst.peek() != '\n')
+        {
+            ifst >> Temp_str;
+        }
+
+        return 0;
+    }
+
+    int K = atoi(Temp_str.c_str());
 
     if (K == 1)
     {
         M = new Two_dimensional_array; //Создаем двумерный массив
 
-        int Key_out = 0;
+        ifst >> Temp_str;
 
-        ifst >> Key_out;
+        if (Temp_str != "1" && Temp_str != "2" && Temp_str != "3")
+        {
+            ifst >> Temp_str;
+            ifst >> Temp_str;
+
+            while (ifst.peek() != '\n')
+            {
+                ifst >> Temp_str;
+            }
+
+            M->N = -1;
+
+            return M;
+        }
+
+        int Key_out = atoi(Temp_str.c_str());
 
         if (Key_out == 1)
         {
@@ -40,15 +71,63 @@ Matrix* Matrix::In_Matrix(ifstream& ifst) {
             M->K_o = ONE_DIMENSIONAL;
         }
 
-        ifst >> M->N; //Cчитываем размерность массива
+        ifst >> Temp_str;
+
+        if (atoi(Temp_str.c_str()) <= 0)
+        {
+            ifst >> Temp_str;
+
+            while (ifst.peek() != '\n')
+            {
+                ifst >> Temp_str;
+            }
+
+            M->N = -1;
+
+            return M;
+        }
+
+        for (int i = 0; i < Temp_str.size(); i++)
+        {
+            if ((Temp_str[i] == '.') || (Temp_str[i] == ','))
+            {
+                ifst >> Temp_str;
+
+                while (ifst.peek() != '\n')
+                {
+                    ifst >> Temp_str;
+                }
+
+                M->N = -1;
+
+                return M;
+            }
+        }
+
+        M->N = atoi(Temp_str.c_str()); //Записываем размерность матрицы
     }
     else if (K == 2)
     {
         M = new Diagonal_matrix; //Создаем диагональную матрицу
 
-        int Key_out = 0;
+        ifst >> Temp_str;
 
-        ifst >> Key_out;
+        if (Temp_str != "1" && Temp_str != "2" && Temp_str != "3")
+        {
+            ifst >> Temp_str;
+            ifst >> Temp_str;
+
+            while (ifst.peek() != '\n')
+            {
+                ifst >> Temp_str;
+            }
+
+            M->N = -1;
+
+            return M;
+        }
+
+        int Key_out = atoi(Temp_str.c_str());
 
         if (Key_out == 1)
         {
@@ -63,15 +142,63 @@ Matrix* Matrix::In_Matrix(ifstream& ifst) {
             M->K_o = ONE_DIMENSIONAL;
         }
 
-        ifst >> M->N; //Cчитываем размерность массива
+        ifst >> Temp_str;
+
+        if (atoi(Temp_str.c_str()) <= 0)
+        {
+            ifst >> Temp_str;
+
+            while (ifst.peek() != '\n')
+            {
+                ifst >> Temp_str;
+            }
+
+            M->N = -1;
+
+            return M;
+        }
+
+        for (int i = 0; i < Temp_str.size(); i++)
+        {
+            if ((Temp_str[i] == '.') || (Temp_str[i] == ','))
+            {
+                ifst >> Temp_str;
+
+                while (ifst.peek() != '\n')
+                {
+                    ifst >> Temp_str;
+                }
+
+                M->N = -1;
+
+                return M;
+            }
+        }
+
+        M->N = atoi(Temp_str.c_str());
     }
     else if (K == 3)
     {
         M = new Triangular_matrix; //Создаем треугольную матрицу
 
-        int Key_out = 0;
+        ifst >> Temp_str;
 
-        ifst >> Key_out;
+        if (Temp_str != "1" && Temp_str != "2" && Temp_str != "3")
+        {
+            ifst >> Temp_str;
+            ifst >> Temp_str;
+
+            while (ifst.peek() != '\n')
+            {
+                ifst >> Temp_str;
+            }
+
+            M->N = -1;
+
+            return M;
+        }
+
+        int Key_out = atoi(Temp_str.c_str());
 
         if (Key_out == 1)
         {
@@ -86,7 +213,40 @@ Matrix* Matrix::In_Matrix(ifstream& ifst) {
             M->K_o = ONE_DIMENSIONAL;
         }
 
-        ifst >> M->N; //Cчитываем размерность массива
+        ifst >> Temp_str;
+
+        if (atoi(Temp_str.c_str()) <= 0)
+        {
+            ifst >> Temp_str;
+
+            while (ifst.peek() != '\n')
+            {
+                ifst >> Temp_str;
+            }
+
+            M->N = -1;
+
+            return M;
+        }
+
+        for (int i = 0; i < Temp_str.size(); i++)
+        {
+            if ((Temp_str[i] == '.') || (Temp_str[i] == ','))
+            {
+                ifst >> Temp_str;
+
+                while (ifst.peek() != '\n')
+                {
+                    ifst >> Temp_str;
+                }
+
+                M->N = -1;
+
+                return M;
+            }
+        }
+
+        M->N = atoi(Temp_str.c_str());
     }
     else
     {
@@ -94,6 +254,28 @@ Matrix* Matrix::In_Matrix(ifstream& ifst) {
     }
 
     M->In_Array(M->N, ifst); //Считываем элементы матрицы
+
+    if (K == 1)
+    {
+        if (((Two_dimensional_array*)M)->Get_Array() == NULL)
+        {
+            M->N = -1;
+        }
+    }
+    else if (K == 2)
+    {
+        if (((Diagonal_matrix*)M)->Get_Array() == NULL)
+        {
+            M->N = -1;
+        }
+    }
+    else if (K == 3)
+    {
+        if (((Triangular_matrix*)M)->Get_Array() == NULL)
+        {
+            M->N = -1;
+        }
+    }
 
     return M;
 }

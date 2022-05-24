@@ -4,9 +4,33 @@ void Diagonal_matrix::In_Array(int N, ifstream& ifst)
 {
     Array = new int[N]; //Выделяем память для диагональной матрицы
 
+    bool Error = false;
+
     for (int i = 0; i < N; i++)
     {
-        ifst >> Array[i]; //Записываем новый элемент в матрицу
+        string Temp_str = "";
+        ifst >> Temp_str;
+
+        if (Temp_str == "")
+        {
+            Array = NULL;
+
+            return;
+        }
+
+        if (isdigit(int(signed char(Temp_str.front()))))
+        {
+            Array[i] = atoi(Temp_str.c_str());
+        }
+        else
+        {
+            Error = true;
+        }
+    }
+
+    if (Error)
+    {
+        Array = NULL;
     }
 }
 
@@ -101,4 +125,9 @@ int Diagonal_matrix::Sum(int N) {
     }
 
     return Sum;
+}
+
+int* Diagonal_matrix::Get_Array()
+{
+    return Array;
 }
