@@ -34,9 +34,9 @@ int main(/*int argc, char* argv[] */ )
     
     cout << "Start" << endl;
 
-    Container C; //Объявляем новый контейнер
+    Container C; //Объявление нового контейнера
 
-    C.In_Container(ifst); //Записываем элементы в контейнер
+    C.In_Container(ifst); //Запись элементов в контейнер
 
     ofst << "Filled container. " << endl;
 
@@ -45,6 +45,8 @@ int main(/*int argc, char* argv[] */ )
     C.Out_Container(ofst); //Вывод контейнера
 
     C.Out_Only_Two_Dim(ofst); //Вывод только обычного двумерного массива
+
+    C.Multi_Method_Container(ofst); //Вызов мультиметода
 
     C.Clear_Container();//Очистка контейнера
 
